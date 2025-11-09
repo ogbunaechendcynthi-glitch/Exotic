@@ -1,0 +1,55 @@
+.btnanimation {
+    background: #4b0082;
+    padding: 15px 40px;
+    color: #fff;
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 14px;
+    cursor: pointer;
+    z-index: 0;
+}
+.btnanimation::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: #6c616c; 
+    border-radius: 10px;
+}
+.btnanimation::before{
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000,#ff7300,#fffb00,#48ff00,#00ffd5,#002bff,#ff00c8,#ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: inherit;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing{
+    0% {background-position: 0 0;}
+    500% {background-position: 0 0;}
+    100% {background-position: 0 0;}
+}
+.btnanimation:hover::before {
+    opacity: 1;
+}
+.btnanimation:active:after{
+    background: transparent;
+}
+.btnanimation:active:before{
+    color: #000;
+    font-weight: bold;
+}
