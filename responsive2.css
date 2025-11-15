@@ -1,0 +1,108 @@
+/**{
+    box-sizing: border-box;
+}
+@media (max-width:600px) {
+    .body {grid-area:1/span 6;}
+    background-color:red ;
+    }*/
+    
+/* Responsive rules (mobile-first + breakpoints) */
+:root{
+  --max-width:1200px;
+  --accent: #7B68EE;
+  --dark: #4B0082;
+  --muted: #fff;
+}
+
+*{box-sizing: border-box;}
+
+/* Make layout fluid */
+body, .body { margin:0; padding:0; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing:antialiased; }
+.wrapper { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 24px; }
+
+/* Generic containers */
+.main, .content { width:100%; max-width: 100%; margin: 0 auto; }
+
+/* Forms */
+.form-box, .form {
+  width: 420px;
+  max-width: 100%;
+  padding: 22px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  position: relative;
+  margin: 16px auto;
+}
+
+.input-box { display:block; margin-bottom: 14px; }
+.input-box input {
+  width:100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid rgba(75,0,130,0.25);
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+}
+.input-box label { display:block; margin-top:6px; font-size:13px; color: rgba(255,255,255,0.9); }
+
+.btn, .btnn, .cn {
+  width:100%;
+  display:inline-block;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor:pointer;
+  border: none;
+}
+
+/* Info text */
+.info-text { max-width: 420px; margin: 12px auto; color: #fff; }
+
+/* Navigation & header adjustments */
+.navbar { width:100%; padding: 8px 12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+.logo { font-size: 24px; padding-left: 8px; color: var(--accent); }
+.menu { order: 3; width:100%; margin-top:8px; }
+.menu ul { width:100%; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; padding:0; }
+.menu ul li { margin:0; font-size:14px; }
+
+/* Utility: make images and background scale */
+img { max-width:100%; height:auto; display:block; }
+.main, .container { background-size: cover; background-position: center; }
+
+/* Layout for content blocks */
+.container { display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap; }
+
+/* Breakpoint: tablets */
+@media (max-width: 768px) {
+  .form-box, .form { width: 90%; padding: 18px; }
+  .info-text { display:block; }
+  .logo { font-size:20px; }
+  .content h1 { font-size: 36px; padding-left: 8px; }
+  .menu ul { justify-content: space-around; }
+  .search { width: 100%; margin-left: 0; margin-top: 8px; }
+  .navbar { padding: 10px; }
+  .container { flex-direction: column; }
+}
+
+/* Breakpoint: phones */
+@media (max-width: 480px) {
+  .wrapper { padding: 12px; }
+  .logo { font-size: 18px; }
+  .content h1 { font-size: 28px; margin-top: 24px; padding-left: 8px; }
+  .form-box, .form { width: 100%; padding: 14px; border-radius: 8px; margin-top: 10px; }
+  .input-box input { font-size: 15px; padding: 10px; }
+  .btn, .btnn, .cn { font-size: 15px; padding: 10px; border-radius: 8px; }
+  .info-text { font-size: 14px; padding: 6px; }
+  .menu ul { flex-direction: column; gap:8px; align-items:center; }
+  /* Hide or tone down decorative/large-bg elements to save bandwidth */
+  .bg-animate, .bg-animate2 { display:none; }
+  /* Force full-width blocks */
+  .navbar, .main, .content, .container { padding-left: 8px; padding-right: 8px; }
+}
+
+/* Small helper: improve touch targets */
+a, button { -webkit-tap-highlight-color: rgba(0,0,0,0.1); }
+
+/* End responsive additions */
