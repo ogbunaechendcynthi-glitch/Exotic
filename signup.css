@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(faded_gallery-JEludq8wsD8-unsplash.jpg);
+    background-color: #601360;
 }
 .wrapper{
     position: relative;
@@ -137,7 +137,6 @@ body{
     background: linear-gradient(45deg, #3a0f3a, #4b0082, #3a0f3a, #601360);
     border-bottom: 3px solid #3a0f3a;
     transform: rotate(-11deg) skewY(-41deg);
-    /*transform: rotate(0) skewY(0);*/
     transform-origin: bottom left;
     transition: 1.5s ease;
 }
