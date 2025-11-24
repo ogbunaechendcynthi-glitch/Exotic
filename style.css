@@ -246,3 +246,170 @@ ul li a:hover{
 .icon{
     align-items: end;
 }
+
+
+
+
+
+
+/* Overflow & sizing fixes for Home.html - using your class names */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 8px;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+
+.icon {
+  width: 100%;
+  max-width: 200px;
+  float: none;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.menu {
+  width: 100%;
+  float: none;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul {
+  float: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+}
+
+ul li {
+  list-style: circle;
+  margin: 0;
+  font-size: 12px;
+}
+
+.search {
+  width: 100%;
+  max-width: 200px;
+  float: none;
+  margin: 10px auto 0;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.srch {
+  flex: 1;
+  min-width: 0;
+}
+
+.btn {
+  flex-shrink: 0;
+}
+
+.content {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content h1, .content h3, .content .par {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding-left: 8px;
+}
+
+.content h1 {
+  font-size: 36px;
+}
+
+.content .cn {
+  width: 100%;
+  max-width: 160px;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.container div {
+  flex: 1;
+  min-width: 250px;
+  padding: 12px;
+}
+
+footer {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Mobile: tablets */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; padding: 8px; }
+  .icon { width: 100%; text-align: center; }
+  .menu { width: 100%; }
+  .menu ul { justify-content: center; gap: 8px; }
+  ul li a { font-size: 11px; }
+  .search { width: 100%; margin-left: 0; }
+  .content h1 { font-size: 28px; }
+  .content h3 i { font-size: 32px; }
+}
+
+/* Mobile: phones */
+@media (max-width: 480px) {
+  .navbar { padding: 6px; }
+  .icon { max-width: 150px; margin: 0 auto 8px; }
+  .menu { width: 100%; }
+  ul li { font-size: 10px; }
+  ul li { margin-left: 0; }
+  .search { width: 100%; margin-left: 0; margin-top: 8px; }
+  .srch { height: 35px; }
+  .content h1 { font-size: 20px; padding-left: 6px; }
+  .content h3 i { font-size: 24px; }
+  .content .par { font-size: 13px; }
+  .content .cn { width: 100%; max-width: 120px; }
+  .container div { min-width: 100%; }
+}

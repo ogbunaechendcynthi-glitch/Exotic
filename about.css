@@ -1,0 +1,21 @@
+  body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e0e0e0;
+            background-image: url(v1016-b-09.jpg);
+        }
+        h1 {
+            color: #8b008b;
+        }
+        p {
+            font-size: 18px;
+            color: #fff;
+        }
+        table {
+            color: #fff;
+            padding-left: 0%;
+        }
+        .italize {
+            font-style: italic;
+        }
+        

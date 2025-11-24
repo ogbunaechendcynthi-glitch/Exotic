@@ -4,13 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    align-self: center;
 }
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(faded_gallery-JEludq8wsD8-unsplash.jpg);
+    background-image: url(ryan-kim-ADvoB9pDkow-unsplash.jpg);
 }
 .wrapper{
     position: relative;
@@ -72,6 +73,7 @@ body{
     color: #fff;
     font-weight: 500;
     padding-right: 23px;
+    align-self: start;
 }
 .input-box input:focus,
 .input-box input:valid{
@@ -214,4 +216,152 @@ body{
    /* transform: rotate(-11deg) skewY(-41deg);*/
    transform: rotate(0) skewY(0);
     transform-origin: bottom left;
+}
+
+
+
+.wrapper .active .bg-animate2{
+    transform: rotate(-11deg)  skewY(-41deg);
+    transition: 1.2s;
+}
+
+
+
+
+
+
+
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    height: auto;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+
+  .wrapper .form-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 40px 20px !important;
+  }
+
+  .wrapper .form-box.login {
+    left: 0;
+  }
+
+  .wrapper .form-box.register {
+    right: 0;
+    display: none;
+  }
+
+  .wrapper .active .form-box.login {
+    transform: translateX(0);
+  }
+
+  .form-box h2 {
+    font-size: 24px;
+  }
+
+  .form-box .input-box {
+    margin: 20px 0;
+    height: 45px;
+  }
+
+  .input-box input {
+    font-size: 14px;
+  }
+
+  .input-box label {
+    font-size: 14px;
+  }
+
+  .btn {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .wrapper .info-text {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px !important;
+    display: block !important;
+  }
+
+  .wrapper .info-text.login {
+    right: 0;
+    text-align: center;
+  }
+
+  .info-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .info-text p {
+    font-size: 13px;
+  }
+
+  .wrapper .bg-animate,
+  .wrapper .bg-animate2 {
+    display: none;
+  }
+
+  .logreg-link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  .wrapper {
+    width: 95%;
+    height: auto;
+    border: 1px solid #3a0f3a;
+  }
+
+  .wrapper .form-box {
+    padding: 30px 15px !important;
+  }
+
+  .form-box h2 {
+    font-size: 20px;
+  }
+
+  .form-box .input-box {
+    margin: 15px 0;
+    height: 40px;
+  }
+
+  .input-box input {
+    font-size: 13px;
+  }
+
+  .btn {
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .info-text h2 {
+    font-size: 18px;
+  }
+
+  .info-text p {
+    font-size: 12px;
+  }
+
+  .logreg-link {
+    font-size: 12px;
+    margin: 15px 0 8px;
+  }
 }
