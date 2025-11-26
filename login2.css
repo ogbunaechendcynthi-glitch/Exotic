@@ -6,14 +6,13 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #4b0084 0%, #7b196e 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     overflow-x: hidden;
-    background-image: url(faded_gallery-JEludq8wsD8-unsplash.jpg);
 }
 
 .wrapper {
