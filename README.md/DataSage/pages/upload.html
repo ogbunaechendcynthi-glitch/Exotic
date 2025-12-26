@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Image - DataSage</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/upload.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">DataSage</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="upload.html">Analyze</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="upload-section">
+        <div class="container">
+            <h1>Image Analysis Tool</h1>
+            <p class="subtitle">Upload or capture an image to get instant AI-powered insights</p>
+
+            <div class="upload-container">
+                <div class="upload-area" onclick="document.getElementById('imageInput').click();">
+                    <div class="upload-icon">📷</div>
+                    <h2>Upload Your Image</h2>
+                    <p>Drag and drop your image here or click to browse</p>
+                    <label for="imageInput" class="file-input-label">Upload Your Image</label>
+                    <input type="file" id="imageInput" class="file-input" accept="image/*" title="Choose an image file" placeholder="No file chosen" onchange="previewImage(event)">
+                    <button type="button" class="btn btn-primary upload-btn" onclick="document.getElementById('imageInput').click();">Choose Image</button>
+                </div>
+
+                <div class="divider">OR</div>
+
+                <div class="camera-area" onclick="document.getElementById('cameraInput').click();">
+                    <div class="camera-icon">📸</div>
+                    <h2>Take a Photo</h2>
+                    <p>Use your device camera to capture an image</p>
+                    <label for="cameraInput" class="file-input-label">Take a Photo</label>
+                    <input type="file" id="cameraInput" class="camera-input" accept="image/*" onchange="previewImage(event)" title="Capture an image" placeholder="No file chosen">
+                    <button type="button" class="btn btn-primary camera-btn" onclick="document.getElementById('cameraInput').click();">Open Camera</button>
+                </div>
+            </div>
+
+            <div class="image-preview" id="imagePreview">
+                <img id="previewImage" src="" alt="Preview">
+                <button class="btn btn-secondary remove-btn" onclick="removeImage()">Remove Image</button>
+            </div>
+
+            <div class="analysis-section" id="analysisSection">
+                <h2>Analysis Results</h2>
+                <div class="results-placeholder">
+                    <p>Upload an image to see analysis results here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 DataSage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('previewImage');
+            const imagePreviewContainer = document.getElementById('imagePreview');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    imagePreviewContainer.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeImage() {
+            const preview = document.getElementById('previewImage');
+            const imagePreviewContainer = document.getElementById('imagePreview');
+            const imageInput = document.getElementById('imageInput');
+            const cameraInput = document.getElementById('cameraInput');
+
+            preview.src = '';
+            imagePreviewContainer.style.display = 'none';
+            imageInput.value = '';
+            cameraInput.value = '';
+        }
+    </script>
+</body>
+</html>
